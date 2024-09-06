@@ -1,12 +1,12 @@
 import Header from "@/components/Header";
-import Landing from "./landing";
+import Home from "./home";
 import Footer from "../components/Footer";
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <Header />
-      <Landing />
+      <Home />
       <Footer />
     </>
   );
