@@ -1,5 +1,6 @@
 import Image from "next/image";
-import teacherIllustration from "../assets/illustrations/teacher.png"; // Assuming the teacher image file is named teacher.png
+import teacherIllustration from "../assets/illustrations/teacher.png";
+import courseCertificate from "../assets/illustrations/course_certificate.png"; // Assuming this is the image file path
 
 export default function Landing() {
   return (
@@ -12,33 +13,50 @@ export default function Landing() {
         </p>
       </section>
 
-      {/* Sections with Illustrations */}
-      <section className="flex flex-wrap justify-center space-x-6 my-12">
-        <div className="flex flex-col items-center">
+      {/* Section with Image on the Left and Text on the Right */}
+      <section className="flex flex-col md:flex-row justify-center items-center md:items-start md:space-x-6 my-12 max-w-4xl">
+        {/* Image on the Left */}
+        <div className="w-full md:w-1/2 text-center md:text-left">
           <Image
             src={teacherIllustration}
             alt="Teacher Illustration"
             width={150}
             height={150}
           />
+        </div>
+
+        {/* Text on the Right */}
+        <div className="w-full md:w-1/2">
           <h3 className="mt-4 text-xl font-semibold">For Teachers</h3>
           <p className="text-gray-600">
             Easily issue credentials for your students using SBTs.
           </p>
         </div>
-        {/* Additional Sections for Students, NFTs, etc. */}
-        {/* You can repeat similar blocks for Students, NFT, etc., with their respective images */}
       </section>
 
-      <section className="text-center max-w-xl space-y-4">
-        <h3 className="text-xl font-semibold">
-          What is Web3 and Soulbound Tokens?
-        </h3>
-        <p className="text-gray-600">
-          Web3 allows for decentralized, trustless systems. Soulbound Tokens
-          (SBTs) are non-transferable tokens used to represent credentials,
-          achievements, or personal identity that cannot be traded.
-        </p>
+      {/* Section with Text on the Left and Image on the Right */}
+      <section className="flex flex-col md:flex-row justify-center items-center md:space-x-6 my-12 max-w-4xl">
+        {/* Text on the Left */}
+        <div className="w-full md:w-1/2">
+          <h3 className="text-xl font-semibold">
+            What is Web3 and Soulbound Tokens?
+          </h3>
+          <p className="text-gray-600">
+            Web3 allows for decentralized, trustless systems. Soulbound Tokens
+            (SBTs) are non-transferable tokens used to represent credentials,
+            achievements, or personal identity that cannot be traded.
+          </p>
+        </div>
+
+        {/* Image on the Right */}
+        <div className="w-full md:w-1/2 text-center md:text-right">
+          <Image
+            src={courseCertificate}
+            alt="Course Certificate Illustration"
+            width={200}
+            height={200}
+          />
+        </div>
       </section>
     </div>
   );
