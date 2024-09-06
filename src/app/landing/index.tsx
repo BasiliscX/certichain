@@ -14,7 +14,7 @@ export default function Landing() {
       </section>
 
       {/* Section for Teachers */}
-      <section className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl">
+      <section className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl px-4">
         {/* Image on the Left */}
         <div className="flex-shrink-0">
           <Image
@@ -26,7 +26,9 @@ export default function Landing() {
         </div>
 
         {/* Text on the Right */}
-        <div>
+        <div className="pl-4">
+          {" "}
+          {/* Added padding to the left */}
           <h3 className="text-xl font-semibold">For Teachers</h3>
           <p className="text-gray-600">
             Easily issue credentials for your students using SBTs.
@@ -35,9 +37,11 @@ export default function Landing() {
       </section>
 
       {/* Section for Web3 and SBT Explanation */}
-      <section className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl">
+      <section className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl px-4">
         {/* Text on the Left */}
-        <div>
+        <div className="pr-4">
+          {" "}
+          {/* Added padding to the right */}
           <h3 className="text-xl font-semibold">
             What is Web3 and Soulbound Tokens?
           </h3>
