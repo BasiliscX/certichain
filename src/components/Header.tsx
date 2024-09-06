@@ -24,35 +24,43 @@ export default function Header() {
     setMenuOpen(!menuOpen);
   };
 
+  // Determine text color based on scroll state
+  const textColor = isScrolled ? "text-black" : "text-white";
+  const linkClass = "hover:text-gray-600"; // DRY the hover class
+  const mobileLinkClass = "text-white hover:text-gray-300"; // DRY for mobile menu
+
   return (
     <header
       className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-blue-500 bg-opacity-90 shadow-lg"
+          ? "bg-white bg-opacity-90 shadow-lg"
           : "bg-blue-500 bg-opacity-50"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-white">CertiChain</h1>
+        <h1 className={`text-2xl font-bold ${textColor}`}>CertiChain</h1>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8">
-          <Link href="/" className="text-white hover:text-gray-300">
+          <Link href="/" className={`${textColor} ${linkClass}`}>
             Learn
           </Link>
-          <Link href="/use" className="text-white hover:text-gray-300">
+          <Link href="/use" className={`${textColor} ${linkClass}`}>
             Use
           </Link>
-          <Link href="/participate" className="text-white hover:text-gray-300">
+          <Link href="/participate" className={`${textColor} ${linkClass}`}>
             Participate
           </Link>
-          <Link href="/research" className="text-white hover:text-gray-300">
+          <Link href="/research" className={`${textColor} ${linkClass}`}>
             Research
           </Link>
         </nav>
 
         {/* Mobile Menu Icon */}
-        <button className="md:hidden text-3xl text-white" onClick={toggleMenu}>
+        <button
+          className={`md:hidden text-3xl ${textColor}`}
+          onClick={toggleMenu}
+        >
           ☰
         </button>
 
@@ -63,11 +71,7 @@ export default function Header() {
             style={{ backdropFilter: "blur(8px)" }}
           >
             <li className="pl-4">
-              <Link
-                href="/"
-                onClick={toggleMenu}
-                className="text-white hover:text-gray-300"
-              >
+              <Link href="/" onClick={toggleMenu} className={mobileLinkClass}>
                 Learn
               </Link>
             </li>
@@ -75,7 +79,7 @@ export default function Header() {
               <Link
                 href="/use"
                 onClick={toggleMenu}
-                className="text-white hover:text-gray-300"
+                className={mobileLinkClass}
               >
                 Use
               </Link>
@@ -84,7 +88,7 @@ export default function Header() {
               <Link
                 href="/participate"
                 onClick={toggleMenu}
-                className="text-white hover:text-gray-300"
+                className={mobileLinkClass}
               >
                 Participate
               </Link>
@@ -93,7 +97,7 @@ export default function Header() {
               <Link
                 href="/research"
                 onClick={toggleMenu}
-                className="text-white hover:text-gray-300"
+                className={mobileLinkClass}
               >
                 Research
               </Link>
