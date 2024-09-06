@@ -26,7 +26,7 @@ export default function Header() {
 
   // Determine text color based on scroll state
   const textColor = isScrolled ? "text-black" : "text-white";
-  const linkClass = "hover:text-gray-600"; // DRY the hover class
+  const linkClass = "hover:text-gray-600"; // DRY for hover class
   const mobileLinkClass = "text-white hover:text-gray-300"; // DRY for mobile menu
 
   return (
@@ -65,11 +65,15 @@ export default function Header() {
         </button>
 
         {/* Mobile Menu */}
-        {menuOpen && (
-          <ul
-            className="absolute left-0 top-16 w-full bg-blue-500 bg-opacity-90 space-y-4 py-4 shadow-lg"
-            style={{ backdropFilter: "blur(8px)" }}
-          >
+        <div
+          className={`absolute left-0 top-16 w-full bg-blue-500 bg-opacity-90 space-y-4 py-4 shadow-lg transform transition-all duration-300 ease-in-out ${
+            menuOpen
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-8 pointer-events-none"
+          }`}
+          style={{ backdropFilter: "blur(8px)" }}
+        >
+          <ul className="space-y-4">
             <li className="pl-4">
               <Link href="/" onClick={toggleMenu} className={mobileLinkClass}>
                 Learn
@@ -103,7 +107,7 @@ export default function Header() {
               </Link>
             </li>
           </ul>
-        )}
+        </div>
       </div>
     </header>
   );
