@@ -1,6 +1,6 @@
 import Image from "next/image";
 import teacherIllustration from "../assets/illustrations/teacher.png";
-import courseCertificate from "../assets/illustrations/course_certificate.png"; // Assuming this is the image file path
+import courseCertificate from "../assets/illustrations/course_certificate.png";
 
 export default function Landing() {
   return (
@@ -13,10 +13,10 @@ export default function Landing() {
         </p>
       </section>
 
-      {/* Section with Image on the Left and Text on the Right */}
-      <section className="flex flex-col md:flex-row justify-center items-center md:items-start md:space-x-6 my-12 max-w-4xl">
+      {/* Section for Teachers */}
+      <section className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl">
         {/* Image on the Left */}
-        <div className="w-full md:w-1/2 text-center md:text-left">
+        <div className="flex-shrink-0">
           <Image
             src={teacherIllustration}
             alt="Teacher Illustration"
@@ -26,18 +26,18 @@ export default function Landing() {
         </div>
 
         {/* Text on the Right */}
-        <div className="w-full md:w-1/2">
-          <h3 className="mt-4 text-xl font-semibold">For Teachers</h3>
+        <div>
+          <h3 className="text-xl font-semibold">For Teachers</h3>
           <p className="text-gray-600">
             Easily issue credentials for your students using SBTs.
           </p>
         </div>
       </section>
 
-      {/* Section with Text on the Left and Image on the Right */}
-      <section className="flex flex-col md:flex-row justify-center items-center md:space-x-6 my-12 max-w-4xl">
+      {/* Section for Web3 and SBT Explanation */}
+      <section className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl">
         {/* Text on the Left */}
-        <div className="w-full md:w-1/2">
+        <div>
           <h3 className="text-xl font-semibold">
             What is Web3 and Soulbound Tokens?
           </h3>
@@ -49,12 +49,12 @@ export default function Landing() {
         </div>
 
         {/* Image on the Right */}
-        <div className="w-full md:w-1/2 text-center md:text-right">
+        <div className="flex-shrink-0">
           <Image
             src={courseCertificate}
             alt="Course Certificate Illustration"
-            width={200}
-            height={200}
+            width={150}
+            height={150}
           />
         </div>
       </section>
