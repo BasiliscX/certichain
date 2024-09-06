@@ -1,9 +1,37 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import courseCertificate from "../assets/illustrations/course_certificate.png";
+import { motion } from "framer-motion"; // Import motion from framer-motion
 
 export default function Web3SBTSection() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById("web3-sbt-section");
+      const rect = section?.getBoundingClientRect();
+      if (rect && rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <section className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl px-4">
+    <motion.section
+      id="web3-sbt-section"
+      initial={{ opacity: 0, y: 20 }} // Initial state: invisible and slightly translated downwards
+      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animation based on visibility
+      transition={{ duration: 1 }} // Smooth transition over 1 second
+      className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl px-4"
+    >
       <div className="pr-4">
         <h3 className="text-xl font-semibold text-blue-900">
           What is Web3 and Soulbound Tokens?
@@ -22,6 +50,6 @@ export default function Web3SBTSection() {
           height={150}
         />
       </div>
-    </section>
+    </motion.section>
   );
 }
