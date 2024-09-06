@@ -4,7 +4,9 @@ import courseCertificate from "../assets/illustrations/course_certificate.png";
 
 export default function Landing() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 pt-16">
+      {" "}
+      {/* Added top padding */}
       <section className="text-center max-w-2xl space-y-4 mt-12">
         <h2 className="text-4xl font-semibold mb-6">Welcome to CertiChain</h2>
         <p className="text-xl text-gray-600">
@@ -12,7 +14,6 @@ export default function Landing() {
           (SBTs).
         </p>
       </section>
-
       {/* Section for Teachers */}
       <section className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl px-4">
         {/* Image on the Left */}
@@ -27,21 +28,16 @@ export default function Landing() {
 
         {/* Text on the Right */}
         <div className="pl-4">
-          {" "}
-          {/* Added padding to the left */}
           <h3 className="text-xl font-semibold">For Teachers</h3>
           <p className="text-gray-600">
             Easily issue credentials for your students using SBTs.
           </p>
         </div>
       </section>
-
       {/* Section for Web3 and SBT Explanation */}
       <section className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl px-4">
         {/* Text on the Left */}
         <div className="pr-4">
-          {" "}
-          {/* Added padding to the right */}
           <h3 className="text-xl font-semibold">
             What is Web3 and Soulbound Tokens?
           </h3>
