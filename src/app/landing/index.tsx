@@ -1,7 +1,7 @@
 import Image from "next/image";
 import teacherIllustration from "../assets/illustrations/teacher.png";
 import courseCertificate from "../assets/illustrations/course_certificate.png";
-import MoreInfoSection from "./MoreInfoSection"; // Importing the MoreInfoSection
+import MoreInfoSection from "./MoreInfoSection";
 
 export default function Landing() {
   return (
@@ -10,6 +10,7 @@ export default function Landing() {
         <h2 className="text-4xl font-semibold mb-6 text-blue-900">
           Welcome to CertiChain
         </h2>
+
         <p className="text-xl text-gray-600">
           Revolutionizing student credential validation using Soulbound Tokens
           (SBTs).

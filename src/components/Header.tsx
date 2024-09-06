@@ -26,8 +26,8 @@ export default function Header() {
 
   // Determine text color based on scroll state
   const textColor = isScrolled ? "text-black" : "text-white";
-  const linkClass = "hover:text-gray-600"; // DRY for hover class
-  const mobileLinkClass = "text-white hover:text-gray-300"; // DRY for mobile menu
+  const linkClass = "hover:text-gray-600";
+  const mobileLinkClass = "text-white hover:text-gray-300";
 
   return (
     <header
@@ -39,6 +39,11 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <h1 className={`text-2xl font-bold ${textColor}`}>CertiChain</h1>
+
+        {/* Subtitle - Hidden on mobile */}
+        <p className={`italic text-sm font-bold hidden md:block ${textColor}`}>
+          Transforming credential validation with blockchain technology
+        </p>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8">
