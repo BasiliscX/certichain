@@ -21,6 +21,10 @@ CertiChain is built using cutting-edge web and blockchain technologies. Below is
 - **Vercel**: A cloud platform for static sites and Serverless Functions, used for seamless deployment of our Next.js application.
 - **Blockchain (Web3)**: Decentralized technology that enables the creation of a trustless, transparent, and immutable credential system.
 
+## Visit the Platform
+
+[CertiChain](https://certichain-phi.vercel.app/)
+
 ## 👤 About the Author
 
 CertiChain is developed by [Guillermo Navarro](https://github.com/BasiliscX), a passionate software developer and blockchain enthusiast, dedicated to exploring the power of Web3 to create transformative solutions in education and beyond.
