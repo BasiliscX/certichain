@@ -7,7 +7,9 @@ export default function Landing() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 pt-16">
       <section className="text-center max-w-2xl space-y-4 mt-12">
-        <h2 className="text-4xl font-semibold mb-6">Welcome to CertiChain</h2>
+        <h2 className="text-4xl font-semibold mb-6 text-blue-900">
+          Welcome to CertiChain
+        </h2>
         <p className="text-xl text-gray-600">
           Revolutionizing student credential validation using Soulbound Tokens
           (SBTs).
@@ -23,7 +25,7 @@ export default function Landing() {
           />
         </div>
         <div className="pl-4">
-          <h3 className="text-xl font-semibold">For Teachers</h3>
+          <h3 className="text-xl font-semibold text-blue-900">For Teachers</h3>
           <p className="text-gray-600">
             Easily issue credentials for your students using SBTs.
           </p>
@@ -31,7 +33,7 @@ export default function Landing() {
       </section>
       <section className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl px-4">
         <div className="pr-4">
-          <h3 className="text-xl font-semibold">
+          <h3 className="text-xl font-semibold text-blue-900">
             What is Web3 and Soulbound Tokens?
           </h3>
           <p className="text-gray-600">

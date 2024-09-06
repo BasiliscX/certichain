@@ -37,7 +37,9 @@ export default function MoreInfoSection() {
         style={{ height }}
       >
         <div className="mt-4 text-left space-y-4">
-          <h3 className="text-xl font-semibold">Why CertiChain?</h3>
+          <h3 className="text-xl font-semibold text-blue-900">
+            Why CertiChain?
+          </h3>
           <p className="text-gray-600">
             CertiChain offers a revolutionary approach to credential validation.
             By utilizing the power of Soulbound Tokens (SBTs), students and
@@ -47,7 +49,7 @@ export default function MoreInfoSection() {
             for modern education.
           </p>
 
-          <h3 className="text-xl font-semibold">How SBTs Work</h3>
+          <h3 className="text-xl font-semibold text-blue-900">How SBTs Work</h3>
           <p className="text-gray-600">
             Soulbound Tokens (SBTs) are attached to your digital identity and
             cannot be transferred, ensuring that the credentials or achievements
