@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f7f7; /* Off-white for background */
+  --foreground: #333333; /* Dark Gray for text */
+  --primary-blue: #4a90e2; /* Primary Blue */
+  --secondary-green: #4caf50; /* Secondary Green */
+  --accent-orange: #f5a623; /* Accent Orange */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +27,40 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.bg-primary {
+  background-color: var(--primary-blue);
+}
+
+.text-primary {
+  color: var(--primary-blue);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-green);
+}
+
+.text-secondary {
+  color: var(--secondary-green);
+}
+
+.bg-accent {
+  background-color: var(--accent-orange);
+}
+
+.text-accent {
+  color: var(--accent-orange);
+}
+
+.btn {
+  @apply text-white font-semibold py-2 px-4 rounded-lg transition;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-opacity-80;
+}
+
+.btn-secondary {
+  @apply bg-secondary hover:bg-opacity-80;
 }
