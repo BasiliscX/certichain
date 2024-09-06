@@ -64,3 +64,8 @@ body {
 .btn-secondary {
   @apply bg-secondary hover:bg-opacity-80;
 }
+
+.transition-max-height {
+  transition: max-height 0.5s ease-in-out;
+  max-height: 0;
+}
