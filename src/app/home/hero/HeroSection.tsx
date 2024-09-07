@@ -13,15 +13,34 @@ const PortfolioPage = () => {
   return (
     <div className="relative">
       {/* Primer ítem estático (Welcome to CertiChain) */}
-      <div className="w-screen h-screen flex items-center justify-center bg-blue-500">
-        <div className="text-center text-white px-4">
+      <div className="relative w-screen h-screen flex items-center justify-center">
+        {/* Video de fondo */}
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          src="/hero-video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+
+        {/* Contenido superpuesto */}
+        <div className="relative text-center text-white px-4 z-10">
           <h1 className="text-6xl md:text-8xl font-bold">
-            Welcome to CertiChain
+            Empowering Academic Achievement with Blockchain
           </h1>
           <p className="text-xl md:text-2xl mt-4">
-            Revolutionizing student credential validation using Soulbound Tokens
-            (SBTs).
+            Seamlessly validate and secure academic credentials with Soulbound
+            Tokens (SBTs).
           </p>
+          <div className="mt-8">
+            <button className="bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded-full font-semibold mx-2">
+              Get Started
+            </button>
+            <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white py-2 px-4 rounded-full font-semibold mx-2">
+              Learn More
+            </button>
+          </div>
         </div>
       </div>
 
