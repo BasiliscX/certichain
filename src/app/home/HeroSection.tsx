@@ -41,13 +41,13 @@ const PortfolioPage = () => {
       <div className="h-[0vh]" />
 
       {/* Sección con scroll horizontal con dos ítems */}
-      <div className="h-[300vh] relative" ref={ref}>
+      <div className="h-[250vh] relative" ref={ref}>
         <div className="sticky top-0 flex h-screen gap-4 items-center justify-center overflow-hidden">
           <motion.div style={{ x }} className="flex">
             {items.map((item) => (
               <div
                 key={item.id}
-                className={`w-screen h-screen flex flex-col justify-center items-center bg-gradient-to-r ${item.color}`}
+                className={`w-screen h-screen flex flex-col justify-center items-center px-6 bg-gradient-to-r ${item.color}`}
               >
                 <h1 className="text-6xl md:text-8xl font-bold text-white">
                   {item.title}
