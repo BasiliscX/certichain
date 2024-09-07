@@ -32,7 +32,15 @@ export default function Web3SBTSection() {
       transition={{ duration: 1 }} // Smooth transition over 1 second
       className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl px-4"
     >
-      <div className="pr-4">
+      <div className="flex-shrink-0">
+        <Image
+          src={courseCertificate}
+          alt="Course Certificate Illustration"
+          width={150}
+          height={150}
+        />
+      </div>{" "}
+      <div className="pl-4">
         <h3 className="text-xl font-semibold text-blue-900">
           What is Web3 and Soulbound Tokens?
         </h3>
@@ -41,14 +49,6 @@ export default function Web3SBTSection() {
           (SBTs) are non-transferable tokens used to represent credentials,
           achievements, or personal identity that cannot be traded.
         </p>
-      </div>
-      <div className="flex-shrink-0">
-        <Image
-          src={courseCertificate}
-          alt="Course Certificate Illustration"
-          width={150}
-          height={150}
-        />
       </div>
     </motion.section>
   );
