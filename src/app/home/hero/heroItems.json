@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "color": "from-purple-300 to-purple-500",
+    "title": "What is CertiChain?",
+    "desc": "CertiChain is a revolutionary platform for credential validation using blockchain technology."
+  },
+  {
+    "id": 2,
+    "color": "from-blue-300 to-blue-500",
+    "title": "How It Works",
+    "desc": "Soulbound Tokens are non-transferable tokens that verify your academic achievements."
+  }
+]
