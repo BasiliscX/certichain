@@ -31,37 +31,46 @@ const PortfolioPage = () => {
       {/* Sección con scroll horizontal con dos ítems */}
       <div className="h-[250vh] relative" ref={ref}>
         <div
-          className="sticky top-0 flex h-screen gap-4 items-center justify-center overflow-hidden
-            bg-cover bg-center" // General background settings
+          className="sticky top-0 flex h-screen gap-4 items-center justify-center overflow-hidden"
           style={{
-            backgroundImage: 'url("/hero-image.png")', // Default for larger screens
-            backgroundAttachment: "fixed", // Fixed background for all
+            backgroundImage: 'url("/hero-image.webp")',
+            backgroundAttachment: "fixed",
+            backgroundSize: "cover", // Cover the entire background area
+            backgroundPosition: "center", // Keep the image centered
           }}
         >
-          {/* Imagen diferente para pantallas pequeñas */}
-          <div
-            className="sm:bg-[url('/hero-image-mobile.png')] md:bg-[url('/hero-image.png')]"
-            style={{
-              backgroundSize: "cover", // Ensure the background scales well
-              backgroundPosition: "center",
-            }}
-          >
-            <motion.div style={{ x }} className="flex">
-              {items.map((item) => (
-                <div
-                  key={item.id}
-                  className="w-screen h-screen flex flex-col justify-center items-center px-6"
+          <motion.div style={{ x }} className="flex">
+            {items.map((item) => (
+              <div
+                key={item.id}
+                className="w-screen h-screen flex flex-col justify-center items-center px-6"
+              >
+                <h1
+                  className="text-6xl md:text-8xl font-bold text-black"
+                  style={{
+                    textShadow: `
+            0 0 10px rgba(255, 255, 255, 0.8), /* Resplandor blanco */
+            0 0 20px rgba(255, 255, 255, 0.6), 
+            0 0 30px rgba(0, 0, 0, 0.5), /* Sombra gris más fuerte */
+            2px 2px 5px rgba(0, 0, 0, 0.4)`,
+                  }}
                 >
-                  <h1 className="text-6xl md:text-8xl font-bold text-white">
-                    {item.title}
-                  </h1>
-                  <p className="text-xl md:text-2xl mt-4 text-white">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </motion.div>
-          </div>
+                  {item.title}
+                </h1>
+                <p
+                  className="text-xl md:text-4xl mt-4 text-black"
+                  style={{
+                    textShadow: `
+            0 0 10px rgba(255, 255, 255, 0.8), /* Resplandor blanco */
+            0 0 15px rgba(255, 255, 255, 0.6),
+            2px 2px 5px rgba(0, 0, 0, 0.4)`,
+                  }}
+                >
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </div>
