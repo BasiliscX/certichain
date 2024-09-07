@@ -1,4 +1,4 @@
-import HeroSection from "./HeroSection";
+import HeroSection from "./hero/HeroSection";
 import TeacherSection from "./TeacherSection";
 import Web3SBTSection from "./Web3SBTSection";
 import MoreInfoSection from "./MoreInfoSection";

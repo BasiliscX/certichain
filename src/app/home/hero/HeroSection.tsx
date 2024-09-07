@@ -1,21 +1,9 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import heroItems from "./heroItems.json";
 
-const items = [
-  {
-    id: 1,
-    color: "from-purple-300 to-purple-500",
-    title: "What is CertiChain?",
-    desc: "CertiChain is a revolutionary platform for credential validation using blockchain technology.",
-  },
-  {
-    id: 2,
-    color: "from-blue-300 to-blue-500",
-    title: "How It Works",
-    desc: "Soulbound Tokens are non-transferable tokens that verify your academic achievements.",
-  },
-];
+const items = heroItems;
 
 const PortfolioPage = () => {
   const ref = useRef(null);
