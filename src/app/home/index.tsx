@@ -5,11 +5,13 @@ import MoreInfoSection from "./MoreInfoSection";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 pt-16">
+    <div className="min-h-screen bg-gray-50 pt-16">
       <HeroSection />
       <TeacherSection />
-      <Web3SBTSection />
-      <MoreInfoSection />
+      <div className=" flex flex-col justify-center items-center">
+        <Web3SBTSection />
+        <MoreInfoSection />
+      </div>
     </div>
   );
 }
