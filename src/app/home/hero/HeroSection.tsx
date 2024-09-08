@@ -14,16 +14,18 @@ const HeroSection = () => {
 
   const router = useRouter();
 
-  const [isExiting, setIsExiting] = useState(false); // Estado para manejar la salida
+  const [isExiting, setIsExiting] = useState(false);
 
   const handleGetStarted = () => {
-    // Activar la animación de deslizamiento hacia abajo
     setIsExiting(true);
 
-    // Esperar un poco para que la animación se complete antes de redirigir
     setTimeout(() => {
       router.push("/login");
     }, 500);
+  };
+
+  const handleLearnMore = () => {
+    router.push("/learn");
   };
 
   return (
@@ -59,7 +61,10 @@ const HeroSection = () => {
             >
               Get Started
             </button>
-            <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white py-2 px-4 rounded-full font-semibold mx-2">
+            <button
+              onClick={handleLearnMore}
+              className="bg-transparent border border-white hover:bg-white hover:text-black text-white py-2 px-4 rounded-full font-semibold mx-2"
+            >
               Learn More
             </button>
           </div>

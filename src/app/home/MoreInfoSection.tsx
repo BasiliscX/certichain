@@ -54,7 +54,7 @@ export default function MoreInfoSection() {
             they represent remain authentic. This allows students to present
             their accomplishments with confidence across institutions and to
             future employers.{" "}
-            <Link href="/more-info">
+            <Link href="/learn">
               <span className="text-blue-500 hover:underline">
                 ...know more
               </span>
