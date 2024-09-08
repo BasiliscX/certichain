@@ -1,18 +1,19 @@
 "use client"; // Marcar como componente del cliente
 
 import { motion } from "framer-motion";
-import Header from "@/components/Header"; // Importar Header
-import Footer from "@/components/Footer"; // Importar Footer
+import Image from "next/image"; // Importar el componente de Next.js
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Login = () => {
   return (
     <>
-      <Header /> {/* Agregar Header */}
+      <Header />
       <motion.div
-        className="flex items-center justify-center min-h-screen bg-gray-50"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
+        className="relative flex items-center justify-center min-h-screen bg-gray-50"
+        initial={{ y: -1000 }} // Posición inicial arriba
+        animate={{ y: 0 }} // Deslizar hacia abajo
+        transition={{ duration: 0.5 }} // Duración de la animación
       >
         <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
           <h2 className="text-center text-3xl font-extrabold text-gray-900">
@@ -57,8 +58,17 @@ const Login = () => {
             </div>
           </form>
         </div>
+
+        {/* Imagen en el borde inferior derecho */}
+        <Image
+          src="/login-image.svg" // Ruta de la imagen
+          alt="Login Illustration"
+          width={200}
+          height={200}
+          className="absolute bottom-0 right-0 m-4" // Posicionamiento
+        />
       </motion.div>
-      <Footer /> {/* Agregar Footer */}
+      <Footer />
     </>
   );
 };
