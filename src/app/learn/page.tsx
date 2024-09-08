@@ -6,12 +6,17 @@ import Footer from "@/components/Footer";
 import topics from "./topics.json"; // Importar el JSON
 
 export default function Learn() {
-  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Función para hacer scroll a la sección correspondiente
   const scrollToSection = (index: number) => {
     sectionsRef.current[index]?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Función que asigna el ref correctamente
+  const setSectionRef = (index: number) => (el: HTMLElement | null) => {
+    sectionsRef.current[index] = el;
   };
 
   const toggleSidebar = () => {
@@ -83,7 +88,7 @@ export default function Learn() {
           {topics.map((topic, index) => (
             <div key={index}>
               {/* Título principal */}
-              <section ref={(el) => (sectionsRef.current[index] = el)}>
+              <section ref={setSectionRef(index)}>
                 <h1 className="text-3xl font-bold mb-4">{topic.title}</h1>
                 <p className="text-gray-700">{topic.content}</p>
               </section>
@@ -94,9 +99,7 @@ export default function Learn() {
                   {topic.subTopics.map((subTopic, subIndex) => (
                     <section
                       key={subIndex}
-                      ref={(el) =>
-                        (sectionsRef.current[index + subIndex + 1] = el)
-                      }
+                      ref={setSectionRef(index + subIndex + 1)}
                       className="mt-4"
                     >
                       <h2 className="text-2xl font-semibold">
