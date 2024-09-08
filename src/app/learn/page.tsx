@@ -28,7 +28,7 @@ export default function Learn() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowToolkit(false); // Ocultar el toolkit después de 5 segundos
-    }, 5000);
+    }, 2500);
 
     return () => clearTimeout(timer); // Limpiar el timer al desmontar
   }, []);
