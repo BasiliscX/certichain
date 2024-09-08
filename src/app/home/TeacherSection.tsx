@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import teacherIllustration from "../assets/illustrations/teacher.png";
@@ -27,9 +26,9 @@ export default function TeacherSection() {
   return (
     <motion.section
       id="teacher-section"
-      initial={{ opacity: 0, y: 20 }} // Initial opacity and slight translate for smoothness
-      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animate opacity and translation
-      transition={{ duration: 1 }} // Smooth transition duration
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+      transition={{ duration: 1 }}
       className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl px-4"
     >
       <div className="flex-shrink-0">
@@ -42,7 +41,7 @@ export default function TeacherSection() {
       </div>
 
       <div className="pl-4">
-        <h3 className="text-2xl font-bold text-blue-900 mb-2">For teachers</h3>
+        <h3 className="text-2xl font-bold text-blue-900 mb-2">For Teachers</h3>
         <p className="text-gray-600">
           Easily issue credentials for your students using SBTs.
         </p>

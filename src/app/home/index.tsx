@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-50 pt-16">
       <HeroSection />
-      <div className=" flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center">
         <TeacherSection />
         <StudentSection />
         <Web3SBTSection />

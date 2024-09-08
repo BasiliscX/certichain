@@ -1,20 +1,18 @@
-"use client"; // Ensure this is a client-side component
+"use client";
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 export default function MoreInfoSection() {
-  const [isOpen, setIsOpen] = useState(false); // State to control the summary
-  const [height, setHeight] = useState("0px"); // State for dynamic height
-  const contentRef = useRef<HTMLDivElement>(null); // Reference for the content
+  const [isOpen, setIsOpen] = useState(false);
+  const [height, setHeight] = useState("0px");
+  const contentRef = useRef<HTMLDivElement>(null);
 
-  // Toggle function to open/close the summary
   const toggleSummary = () => {
     setIsOpen(!isOpen);
     setHeight(isOpen ? "0px" : `${contentRef.current?.scrollHeight}px`);
   };
 
-  // Adjust height dynamically on component updates (for smoother transitions)
   useEffect(() => {
     setHeight(isOpen ? `${contentRef.current?.scrollHeight}px` : "0px");
   }, [isOpen]);

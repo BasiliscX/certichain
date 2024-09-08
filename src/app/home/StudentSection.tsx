@@ -27,9 +27,9 @@ export default function StudentSection() {
   return (
     <motion.section
       id="student-section"
-      initial={{ opacity: 0, y: 20 }} // Initial opacity and slight translate for smoothness
-      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animate opacity and translation
-      transition={{ duration: 1 }} // Smooth transition duration
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+      transition={{ duration: 1 }}
       className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl px-4"
     >
       <div className="pl-4">

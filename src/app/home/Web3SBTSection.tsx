@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import courseCertificate from "../assets/illustrations/course_certificate.png";
-import { motion } from "framer-motion"; // Import motion from framer-motion
+import { motion } from "framer-motion";
 
 export default function Web3SBTSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,9 +27,9 @@ export default function Web3SBTSection() {
   return (
     <motion.section
       id="web3-sbt-section"
-      initial={{ opacity: 0, y: 20 }} // Initial state: invisible and slightly translated downwards
-      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }} // Animation based on visibility
-      transition={{ duration: 1 }} // Smooth transition over 1 second
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+      transition={{ duration: 1 }}
       className="flex flex-row justify-center items-center space-x-4 my-12 max-w-4xl px-4"
     >
       <div className="flex-shrink-0">

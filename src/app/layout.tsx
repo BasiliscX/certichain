@@ -1,4 +1,4 @@
-import "./globals.css"; // Path to your global styles or tailwind setup
+import "./globals.css";
 
 export default function RootLayout({
   children,
