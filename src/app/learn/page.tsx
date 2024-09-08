@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import topics from "./topics.json"; // Importar el JSON
@@ -8,6 +8,7 @@ import topics from "./topics.json"; // Importar el JSON
 export default function Learn() {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showToolkit, setShowToolkit] = useState(true); // Estado para controlar la visibilidad del toolkit
 
   // Función para hacer scroll a la sección correspondiente
   const scrollToSection = (index: number) => {
@@ -22,6 +23,15 @@ export default function Learn() {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  // useEffect para ocultar el toolkit después de 5 segundos
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowToolkit(false); // Ocultar el toolkit después de 5 segundos
+    }, 5000);
+
+    return () => clearTimeout(timer); // Limpiar el timer al desmontar
+  }, []);
 
   return (
     <>
@@ -115,6 +125,15 @@ export default function Learn() {
             </div>
           ))}
         </main>
+
+        {/* Toolkit emergente */}
+        {showToolkit && (
+          <div className="fixed bottom-16 right-4 bg-yellow-300 p-4 rounded-lg shadow-lg animate-bounce">
+            <p className="text-black font-semibold">
+              Explore from the Topics button!
+            </p>
+          </div>
+        )}
       </div>
       <Footer />
     </>
