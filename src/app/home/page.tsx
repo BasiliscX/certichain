@@ -6,7 +6,7 @@ import StudentSection from "./StudentSection";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
+    <div className="bg-gray-50 pt-16">
       <HeroSection />
       <div className="flex flex-col justify-center items-center">
         <TeacherSection />
