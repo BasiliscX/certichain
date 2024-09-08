@@ -53,7 +53,7 @@ export default function Header() {
           <Link href="/login" className={`${textColor} ${linkClass}`}>
             Get Started
           </Link>
-          <Link href="/" className={`${textColor} ${linkClass}`}>
+          <Link href="/learn" className={`${textColor} ${linkClass}`}>
             Learn
           </Link>
           <Link href="/use" className={`${textColor} ${linkClass}`}>
@@ -95,7 +95,11 @@ export default function Header() {
               </Link>
             </li>
             <li className="pl-4">
-              <Link href="/" onClick={toggleMenu} className={mobileLinkClass}>
+              <Link
+                href="/learn"
+                onClick={toggleMenu}
+                className={mobileLinkClass}
+              >
                 Learn
               </Link>
             </li>
