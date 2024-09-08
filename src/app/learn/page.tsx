@@ -27,7 +27,7 @@ export default function Learn() {
     <>
       <Header />
 
-      <div className="mt-20 flex flex-col min-h-screen">
+      <div className="mt-20 flex flex-col min-h-screen bg-gray-50">
         {/* Botón flotante para abrir el sidebar en todos los tamaños */}
         <button
           onClick={toggleSidebar}
@@ -89,13 +89,15 @@ export default function Learn() {
             <div key={index}>
               {/* Título principal */}
               <section ref={setSectionRef(index)}>
-                <h1 className="text-3xl font-bold mb-4">{topic.title}</h1>
+                <h1 className="text-3xl font-bold mb-4 text-blue-900">
+                  {topic.title}
+                </h1>
                 <p className="text-gray-700">{topic.content}</p>
               </section>
 
               {/* Subtítulos y contenido */}
               {topic.subTopics.length > 0 && (
-                <div className="ml-4 mt-6">
+                <div className="ml-4 mt-6 text-blue-800">
                   {topic.subTopics.map((subTopic, subIndex) => (
                     <section
                       key={subIndex}
