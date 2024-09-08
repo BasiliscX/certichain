@@ -38,7 +38,10 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className={`text-2xl font-bold ${textColor}`}>CertiChain</h1>
+        {/* Cambiar el href a "/" para redirigir a la página principal */}
+        <Link href="/" className={`text-2xl font-bold ${textColor}`}>
+          CertiChain
+        </Link>
 
         {/* Subtitle - Hidden on mobile */}
         <p
@@ -48,7 +51,10 @@ export default function Header() {
         </p>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 items-center">
+          <Link href="/login" className={`${textColor} ${linkClass}`}>
+            Get Started
+          </Link>
           <Link href="/" className={`${textColor} ${linkClass}`}>
             Learn
           </Link>
@@ -81,6 +87,15 @@ export default function Header() {
           style={{ backdropFilter: "blur(8px)" }}
         >
           <ul className="space-y-4">
+            <li className="pl-4">
+              <Link
+                href="/login"
+                onClick={toggleMenu}
+                className={mobileLinkClass}
+              >
+                Get Started
+              </Link>
+            </li>
             <li className="pl-4">
               <Link href="/" onClick={toggleMenu} className={mobileLinkClass}>
                 Learn

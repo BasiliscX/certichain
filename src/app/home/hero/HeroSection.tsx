@@ -28,6 +28,7 @@ const HeroSection = () => {
 
   return (
     <motion.div
+      id="hero-section"
       className="relative"
       initial={{ y: 0 }} // Posición inicial
       animate={{ y: isExiting ? 1000 : 0 }} // Animar el deslizamiento hacia abajo
