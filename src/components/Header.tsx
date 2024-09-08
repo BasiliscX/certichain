@@ -41,7 +41,9 @@ export default function Header() {
         <h1 className={`text-2xl font-bold ${textColor}`}>CertiChain</h1>
 
         {/* Subtitle - Hidden on mobile */}
-        <p className={`italic text-sm font-bold hidden md:block ${textColor}`}>
+        <p
+          className={`italic text-sm text-center font-bold hidden mx-7 md:block ${textColor}`}
+        >
           Transforming credential validation with blockchain technology
         </p>
 
