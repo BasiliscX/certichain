@@ -1,17 +1,38 @@
-"use client";
+"use client"; // Marcar como componente del cliente
+
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import heroItems from "./heroItems.json";
 
 const items = heroItems;
 
-const PortfolioPage = () => {
+const HeroSection = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const x = useTransform(scrollYProgress, [0, 1], ["25%", "-25%"]);
 
+  const router = useRouter();
+
+  const [isExiting, setIsExiting] = useState(false); // Estado para manejar la salida
+
+  const handleGetStarted = () => {
+    // Activar la animación de deslizamiento hacia abajo
+    setIsExiting(true);
+
+    // Esperar un poco para que la animación se complete antes de redirigir
+    setTimeout(() => {
+      router.push("/login");
+    }, 500);
+  };
+
   return (
-    <div className="relative">
+    <motion.div
+      className="relative"
+      initial={{ y: 0 }} // Posición inicial
+      animate={{ y: isExiting ? 1000 : 0 }} // Animar el deslizamiento hacia abajo
+      transition={{ duration: 0.5 }} // Duración de la animación
+    >
       <div className="relative w-screen h-screen flex items-center justify-center">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
@@ -31,7 +52,10 @@ const PortfolioPage = () => {
             Tokens (SBTs).
           </p>
           <div className="mt-8">
-            <button className="bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded-full font-semibold mx-2">
+            <button
+              onClick={handleGetStarted}
+              className="bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded-full font-semibold mx-2"
+            >
               Get Started
             </button>
             <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white py-2 px-4 rounded-full font-semibold mx-2">
@@ -70,8 +94,8 @@ const PortfolioPage = () => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-export default PortfolioPage;
+export default HeroSection;
