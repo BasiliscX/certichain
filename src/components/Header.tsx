@@ -32,9 +32,7 @@ export default function Header() {
   return (
     <header
       className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white bg-opacity-90 shadow-lg"
-          : "bg-blue-500 bg-opacity-50"
+        isScrolled ? "bg-white bg-opacity-90 shadow-lg" : "bg-blue-900 "
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
