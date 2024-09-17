@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
 import topics from "./topics.json"; // Importar el JSON
 

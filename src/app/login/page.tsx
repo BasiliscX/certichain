@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useWeb3 } from "@/context/Web3Context";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
 
 declare global {

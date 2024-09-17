@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useWeb3 } from "@/context/Web3Context";
+import { HamburgerMenu } from "./HamburgerMenu";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const { ethAccount } = useWeb3();
 
   useEffect(() => {
@@ -21,13 +21,8 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   const textColor = isScrolled ? "text-black" : "text-white";
   const linkClass = "hover:text-gray-600";
-  const mobileLinkClass = "text-white hover:text-gray-300";
 
   return (
     <header
@@ -68,69 +63,7 @@ export default function Header() {
           </Link>
         </nav>
 
-        <button
-          className={`md:hidden text-3xl ${textColor}`}
-          onClick={toggleMenu}
-        >
-          ☰
-        </button>
-
-        <div
-          className={`absolute left-0 top-16 w-full bg-blue-500 bg-opacity-90 space-y-4 py-4 shadow-lg transform transition-all duration-300 ease-in-out ${
-            menuOpen
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 -translate-y-8 pointer-events-none"
-          }`}
-          style={{ backdropFilter: "blur(8px)" }}
-        >
-          <ul className="space-y-4">
-            <li className="pl-4">
-              <Link href="/login" className={`${textColor} ${linkClass}`}>
-                {ethAccount ? (
-                  <p>Connected: 0x...{ethAccount.slice(-4)}</p>
-                ) : (
-                  <p>Get Started</p>
-                )}
-              </Link>
-            </li>
-            <li className="pl-4">
-              <Link
-                href="/learn"
-                onClick={toggleMenu}
-                className={mobileLinkClass}
-              >
-                Learn
-              </Link>
-            </li>
-            <li className="pl-4">
-              <Link
-                href="/use"
-                onClick={toggleMenu}
-                className={mobileLinkClass}
-              >
-                Use
-              </Link>
-            </li>
-            <li className="pl-4">
-              <Link
-                href="/participate"
-                onClick={toggleMenu}
-                className={mobileLinkClass}
-              >
-                Participate
-              </Link>
-            </li>
-            <li className="pl-4">
-              <Link
-                href="/research"
-                onClick={toggleMenu}
-                className={mobileLinkClass}
-              >
-                Research
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <HamburgerMenu textColor={textColor} linkClass={linkClass} />
       </div>
     </header>
   );
