@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -86,12 +85,12 @@ export default function Header() {
         >
           <ul className="space-y-4">
             <li className="pl-4">
-              <Link
-                href="/login"
-                onClick={toggleMenu}
-                className={mobileLinkClass}
-              >
-                Get Started
+              <Link href="/login" className={`${textColor} ${linkClass}`}>
+                {ethAccount ? (
+                  <p>Connected: 0x...{ethAccount.slice(-4)}</p>
+                ) : (
+                  <p>Get Started</p>
+                )}
               </Link>
             </li>
             <li className="pl-4">
