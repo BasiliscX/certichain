@@ -1,9 +1,17 @@
 "use client";
-import React, { createContext, useState, useContext, ReactNode } from "react";
+
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useEffect,
+  ReactNode,
+} from "react";
 
 interface Web3ContextProps {
   ethAccount: string | null;
   connectMetaMask: () => Promise<void>;
+  disconnectMetaMask: () => void;
 }
 
 const Web3Context = createContext<Web3ContextProps | undefined>(undefined);
@@ -13,6 +21,13 @@ export const Web3Provider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [ethAccount, setEthAccount] = useState<string | null>(null);
 
+  useEffect(() => {
+    const savedAccount = localStorage.getItem("ethAccount");
+    if (savedAccount) {
+      setEthAccount(savedAccount);
+    }
+  }, []);
+
   const isMetaMaskInstalled = () => {
     return typeof window.ethereum !== "undefined";
   };
@@ -20,10 +35,15 @@ export const Web3Provider: React.FC<{ children: ReactNode }> = ({
   const connectMetaMask = async () => {
     if (isMetaMaskInstalled()) {
       try {
-        const accounts = await window.ethereum.request({
+        const ethereum = window.ethereum as typeof window.ethereum & {
+          request: (args: { method: string }) => Promise<string[]>;
+        };
+        const accounts = await ethereum.request({
           method: "eth_requestAccounts",
         });
-        setEthAccount(accounts[0]);
+        const account = accounts[0];
+        setEthAccount(account);
+        localStorage.setItem("ethAccount", account);
       } catch (error) {
         console.error("Error connecting to MetaMask:", error);
       }
@@ -32,8 +52,15 @@ export const Web3Provider: React.FC<{ children: ReactNode }> = ({
     }
   };
 
+  const disconnectMetaMask = () => {
+    setEthAccount(null);
+    localStorage.removeItem("ethAccount");
+  };
+
   return (
-    <Web3Context.Provider value={{ ethAccount, connectMetaMask }}>
+    <Web3Context.Provider
+      value={{ ethAccount, connectMetaMask, disconnectMetaMask }}
+    >
       {children}
     </Web3Context.Provider>
   );
