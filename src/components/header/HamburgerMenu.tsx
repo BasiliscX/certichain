@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useWeb3 } from "@/context/Web3Context";
+import { HMli } from "./HM-li";
 
 export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
   textColor,
@@ -41,38 +42,28 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
               )}
             </Link>
           </li>
-          <li className="pl-4">
-            <Link
-              href="/learn"
-              onClick={toggleMenu}
-              className={mobileLinkClass}
-            >
-              Learn
-            </Link>
-          </li>
-          <li className="pl-4">
-            <Link href="/use" onClick={toggleMenu} className={mobileLinkClass}>
-              Use
-            </Link>
-          </li>
-          <li className="pl-4">
-            <Link
-              href="/participate"
-              onClick={toggleMenu}
-              className={mobileLinkClass}
-            >
-              Participate
-            </Link>
-          </li>
-          <li className="pl-4">
-            <Link
-              href="/research"
-              onClick={toggleMenu}
-              className={mobileLinkClass}
-            >
-              Research
-            </Link>
-          </li>
+          <HMli
+            href="/learn"
+            toggleMenu={toggleMenu}
+            mobileLinkClass={mobileLinkClass}
+            title="Learn"
+          />
+          <HMli
+            toggleMenu={toggleMenu}
+            mobileLinkClass={mobileLinkClass}
+            title="Use"
+          />
+
+          <HMli
+            toggleMenu={toggleMenu}
+            mobileLinkClass={mobileLinkClass}
+            title="Participate"
+          />
+          <HMli
+            toggleMenu={toggleMenu}
+            mobileLinkClass={mobileLinkClass}
+            title="research"
+          />
         </ul>
       </div>
     </div>
