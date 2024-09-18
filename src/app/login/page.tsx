@@ -6,6 +6,7 @@ import { useWeb3 } from "@/context/Web3Context";
 import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
 
+// Extend the Window interface to include ethereum
 declare global {
   interface Window {
     ethereum?: unknown;
@@ -16,6 +17,8 @@ const Login = () => {
   const { ethAccount, connectMetaMask, disconnectMetaMask } = useWeb3();
   const buttonStyle =
     "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white";
+
+  const isClient = typeof window !== "undefined";
 
   return (
     <>
@@ -31,7 +34,7 @@ const Login = () => {
             Sign in to your account
           </h2>
           <div className="mt-6">
-            {typeof window.ethereum !== "undefined" ? (
+            {isClient && typeof window.ethereum !== "undefined" ? (
               ethAccount ? (
                 <button
                   onClick={disconnectMetaMask}

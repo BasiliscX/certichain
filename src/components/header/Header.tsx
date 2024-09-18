@@ -52,13 +52,13 @@ export default function Header() {
           <Link href="/learn" className={`${textColor} ${linkClass}`}>
             Learn
           </Link>
-          <Link href="/use" className={`${textColor} ${linkClass}`}>
+          <Link href="/#" className={`${textColor} ${linkClass}`}>
             Use
           </Link>
-          <Link href="/participate" className={`${textColor} ${linkClass}`}>
+          <Link href="/#" className={`${textColor} ${linkClass}`}>
             Participate
           </Link>
-          <Link href="/research" className={`${textColor} ${linkClass}`}>
+          <Link href="/#" className={`${textColor} ${linkClass}`}>
             Research
           </Link>
         </nav>
