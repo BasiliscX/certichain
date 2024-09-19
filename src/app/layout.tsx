@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Web3Provider } from "@/context/Web3Context";
+import { Web3Provider } from "@/context/web3context/Web3Provider";
 
 export default function RootLayout({
   children,

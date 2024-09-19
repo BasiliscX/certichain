@@ -1,20 +1,7 @@
 "use client";
 
-import React, {
-  createContext,
-  useState,
-  useContext,
-  useEffect,
-  ReactNode,
-} from "react";
-
-interface Web3ContextProps {
-  ethAccount: string | null;
-  connectMetaMask: () => Promise<void>;
-  disconnectMetaMask: () => void;
-}
-
-const Web3Context = createContext<Web3ContextProps | undefined>(undefined);
+import React, { useState, useEffect, ReactNode } from "react";
+import Web3Context from "./Web3Context";
 
 export const Web3Provider: React.FC<{ children: ReactNode }> = ({
   children,
@@ -64,12 +51,4 @@ export const Web3Provider: React.FC<{ children: ReactNode }> = ({
       {children}
     </Web3Context.Provider>
   );
-};
-
-export const useWeb3 = () => {
-  const context = useContext(Web3Context);
-  if (context === undefined) {
-    throw new Error("useWeb3 must be used within a Web3Provider");
-  }
-  return context;
 };

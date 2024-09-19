@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import { useWeb3 } from "@/context/Web3Context";
+import { useWeb3 } from "@/context/web3context/useWeb3";
 import { HMli } from "./HM-li";
 
 export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useWeb3 } from "@/context/Web3Context";
+import { useWeb3 } from "@/context/web3context/useWeb3";
 import { HamburgerMenu } from "./HamburgerMenu";
 
 export default function Header() {
