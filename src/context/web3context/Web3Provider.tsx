@@ -3,6 +3,37 @@
 import React, { useState, useEffect, ReactNode } from "react";
 import Web3Context from "./Web3Context";
 
+/**
+ * Web3Provider component that provides Ethereum account management using MetaMask.
+ *
+ * @component
+ * @param {ReactNode} children - The child components that will be wrapped by this provider.
+ *
+ * @returns {JSX.Element} The Web3Context provider with Ethereum account management.
+ *
+ * @example
+ * <Web3Provider>
+ *   <App />
+ * </Web3Provider>
+ *
+ * @remarks
+ * This component manages the Ethereum account state and provides functions to connect and disconnect MetaMask.
+ * It also checks if MetaMask is installed and retrieves the saved Ethereum account from localStorage.
+ *
+ * @function
+ * @name isMetaMaskInstalled
+ * @description Checks if MetaMask is installed in the browser.
+ * @returns {boolean} True if MetaMask is installed, false otherwise.
+ *
+ * @function
+ * @name connectMetaMask
+ * @description Connects to MetaMask and retrieves the Ethereum account.
+ * @returns {Promise<void>} A promise that resolves when the account is retrieved.
+ *
+ * @function
+ * @name disconnectMetaMask
+ * @description Disconnects the Ethereum account and removes it from localStorage.
+ */
 export const Web3Provider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
