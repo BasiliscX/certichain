@@ -1,4 +1,4 @@
-"use client"; // Marcar como componente del cliente
+"use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
@@ -32,9 +32,9 @@ const HeroSection = () => {
     <motion.div
       id="hero-section"
       className="relative"
-      initial={{ y: 0 }} // Posición inicial
-      animate={{ y: isExiting ? 1000 : 0 }} // Animar el deslizamiento hacia abajo
-      transition={{ duration: 0.5 }} // Duración de la animación
+      initial={{ y: 0 }}
+      animate={{ y: isExiting ? 1000 : 0 }}
+      transition={{ duration: 0.5 }}
     >
       <div className="relative w-screen h-screen flex items-center justify-center">
         <video
@@ -70,9 +70,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      <div className="h-[0vh]" />
-
       <div className="h-[250vh] relative" ref={ref}>
         <div
           className="sticky top-0 flex h-screen gap-4 items-center justify-center overflow-hidden"
