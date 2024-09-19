@@ -1,17 +1,10 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import heroItems from "./heroItems.json";
-
-const items = heroItems;
 
 const HeroSection = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const x = useTransform(scrollYProgress, [0, 1], ["25%", "-25%"]);
-
   const router = useRouter();
 
   const [isExiting, setIsExiting] = useState(false);
@@ -68,33 +61,6 @@ const HeroSection = () => {
               Learn More
             </button>
           </div>
-        </div>
-      </div>
-      <div className="h-[250vh] relative" ref={ref}>
-        <div
-          className="sticky top-0 flex h-screen gap-4 items-center justify-center overflow-hidden"
-          style={{
-            backgroundImage: 'url("/hero-image.webp")',
-            backgroundAttachment: "fixed",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <motion.div style={{ x }} className="flex">
-            {items.map((item) => (
-              <div
-                key={item.id}
-                className="w-screen h-screen flex flex-col justify-center items-center px-12"
-              >
-                <h1 className="text-6xl md:text-8xl font-bold text-black">
-                  {item.title}
-                </h1>
-                <p className="text-xl md:text-4xl mt-4 text-black">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </div>
     </motion.div>
