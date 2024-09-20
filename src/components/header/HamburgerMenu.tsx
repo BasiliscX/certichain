@@ -67,6 +67,14 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
               )}
             </Link>
           </li>
+          {ethAccount && (
+            <HMli
+              href="/admin"
+              toggleMenu={toggleMenu}
+              mobileLinkClass={mobileLinkClass}
+              title="Go to Admin Panel"
+            />
+          )}
           <HMli
             href="/learn"
             toggleMenu={toggleMenu}
