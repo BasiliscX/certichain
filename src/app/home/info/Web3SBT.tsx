@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import courseCertificate from "../../assets/illustrations/course_certificate.png";
 import { motion } from "framer-motion";
 
 export default function Web3SBT() {
@@ -34,7 +33,7 @@ export default function Web3SBT() {
     >
       <div className="flex-shrink-0">
         <Image
-          src={courseCertificate}
+          src="/home/info/course_certificate.png"
           alt="Course Certificate Illustration"
           width={150}
           height={150}

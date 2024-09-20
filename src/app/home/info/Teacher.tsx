@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import teacherIllustration from "../../assets/illustrations/teacher.png";
 import { motion } from "framer-motion";
 
 export default function Teacher() {
@@ -33,7 +32,7 @@ export default function Teacher() {
     >
       <div className="flex-shrink-0">
         <Image
-          src={teacherIllustration}
+          src="/home/info/teacher.png"
           alt="Teacher Illustration"
           width={150}
           height={150}
