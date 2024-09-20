@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useWeb3 } from "@/context/web3context/useWeb3";
 
 // Extend the Window interface to include ethereum
@@ -33,12 +34,21 @@ const Login = () => {
           <div className="mt-6">
             {isClient && typeof window.ethereum !== "undefined" ? (
               ethAccount ? (
-                <button
-                  onClick={disconnectMetaMask}
-                  className={`${buttonStyle} bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500`}
-                >
-                  Disconnect MetaMask
-                </button>
+                <>
+                  <button
+                    onClick={disconnectMetaMask}
+                    className={`${buttonStyle} bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500`}
+                  >
+                    Disconnect MetaMask
+                  </button>
+                  <Link href="/admin">
+                    <button
+                      className={`${buttonStyle} bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4`}
+                    >
+                      Go to Admin Panel
+                    </button>
+                  </Link>
+                </>
               ) : (
                 <button
                   onClick={connectMetaMask}
