@@ -22,7 +22,7 @@ const AboutSection = () => {
         <div
           className="sticky top-0 flex h-screen gap-4 items-center justify-center overflow-hidden"
           style={{
-            backgroundImage: 'url("/hero-image.webp")',
+            backgroundImage: 'url("/home/about/hero-image.webp")',
             backgroundAttachment: "fixed",
             backgroundSize: "cover",
             backgroundPosition: "center",

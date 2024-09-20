@@ -32,7 +32,7 @@ const HeroSection = () => {
       <div className="relative w-screen h-screen flex items-center justify-center">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
-          src="/hero-video.mp4"
+          src="/home/hero/hero-video.mp4"
           autoPlay
           loop
           muted
