@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,10 +15,14 @@ declare global {
 
 const Login = () => {
   const { ethAccount, connectMetaMask, disconnectMetaMask } = useWeb3();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const buttonStyle =
     "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white";
-
-  const isClient = typeof window !== "undefined";
 
   return (
     <>
