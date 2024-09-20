@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useWeb3 } from "@/context/web3context/useWeb3";
-import Header from "@/components/header/Header";
-import Footer from "@/components/Footer";
 
 // Extend the Window interface to include ethereum
 declare global {
@@ -22,7 +20,6 @@ const Login = () => {
 
   return (
     <>
-      <Header />
       <motion.div
         className="relative flex items-center justify-center min-h-screen bg-gray-50"
         initial={{ y: -1000 }}
@@ -72,7 +69,6 @@ const Login = () => {
           className="absolute bottom-0 right-0 m-4" // Posicionamiento
         />
       </motion.div>
-      <Footer />
     </>
   );
 };
