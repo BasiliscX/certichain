@@ -42,7 +42,10 @@ export default function Header() {
         </p>
 
         <nav className="hidden md:flex space-x-8 items-center">
-          <Link href="/login" className={`${textColor} ${linkClass}`}>
+          <Link
+            href="/login"
+            className={`${textColor} ${linkClass} text-center`}
+          >
             {ethAccount ? (
               <p>Connected: 0x...{ethAccount.slice(-4)}</p>
             ) : (
@@ -50,7 +53,10 @@ export default function Header() {
             )}
           </Link>
           {ethAccount && (
-            <Link href="/admin" className={`${textColor} ${linkClass}`}>
+            <Link
+              href="/admin"
+              className={`${textColor} ${linkClass} text-center`}
+            >
               Go to Admin Panel
             </Link>
           )}
