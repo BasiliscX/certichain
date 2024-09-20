@@ -61,6 +61,11 @@ export default function Header() {
           <Link href="/#" className={`${textColor} ${linkClass}`}>
             Research
           </Link>
+          {ethAccount && (
+            <Link href="/admin" className={`${textColor} ${linkClass} ml-4`}>
+              Go to Admin Panel
+            </Link>
+          )}
         </nav>
 
         <HamburgerMenu textColor={textColor} linkClass={linkClass} />
