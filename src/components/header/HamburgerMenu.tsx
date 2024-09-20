@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useWeb3 } from "@/context/web3context/useWeb3";
 import { HMli } from "./HM-li";
@@ -8,16 +8,41 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
   linkClass,
 }) => {
   const mobileLinkClass = "text-white hover:text-gray-300";
-
   const { ethAccount } = useWeb3();
-
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setMenuOpen(false);
+    }
+  };
+
+  const handleScroll = () => {
+    setMenuOpen(false);
+  };
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.addEventListener("click", handleClickOutside);
+      window.addEventListener("scroll", handleScroll);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [menuOpen]);
+
   return (
-    <div>
-      {" "}
+    <div ref={menuRef}>
       <button
         className={`md:hidden text-3xl ${textColor}`}
         onClick={toggleMenu}
@@ -53,7 +78,6 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
             mobileLinkClass={mobileLinkClass}
             title="Use"
           />
-
           <HMli
             toggleMenu={toggleMenu}
             mobileLinkClass={mobileLinkClass}
@@ -62,15 +86,15 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
           <HMli
             toggleMenu={toggleMenu}
             mobileLinkClass={mobileLinkClass}
-            title="research"
+            title="Research"
           />
         </ul>
       </div>
     </div>
   );
 };
+
 type HamburgerMenuProps = {
   textColor: string;
-
   linkClass: string;
 };
