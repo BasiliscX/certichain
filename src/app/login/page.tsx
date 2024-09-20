@@ -62,11 +62,11 @@ const Login = () => {
 
         {/* Imagen en el borde inferior derecho */}
         <Image
-          src="/login-image.svg" // Ruta de la imagen
+          src="/login/login-image.svg"
           alt="Login Illustration"
           width={200}
           height={200}
-          className="absolute bottom-0 right-0 m-4" // Posicionamiento
+          className="absolute bottom-0 right-0 m-4"
         />
       </motion.div>
     </>
