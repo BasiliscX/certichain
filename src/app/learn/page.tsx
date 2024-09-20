@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Header from "@/components/header/Header";
-import Footer from "@/components/Footer";
-import topics from "./topics.json"; // Importar el JSON
+import topics from "./topics.json";
 
 export default function Learn() {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
@@ -35,8 +33,6 @@ export default function Learn() {
 
   return (
     <>
-      <Header />
-
       <div className="mt-20 flex flex-col min-h-screen bg-gray-50">
         {/* Botón flotante para abrir el sidebar en todos los tamaños */}
         <button
@@ -135,7 +131,6 @@ export default function Learn() {
           </div>
         )}
       </div>
-      <Footer />
     </>
   );
 }
