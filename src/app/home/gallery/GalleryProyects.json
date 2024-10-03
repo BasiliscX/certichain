@@ -1,0 +1,26 @@
+[
+  {
+    "title": "CertiChain",
+    "description": "A platform to issue blockchain-based credentials.",
+    "imageSrc": "/certichain.svg",
+    "url": "https://certichain-phi.vercel.app/"
+  },
+  {
+    "title": "AdmiNotas",
+    "description": "Automated student grading system for schools.",
+    "imageSrc": "/adminotas.svg",
+    "url": "https://www.adminotas.site/"
+  },
+  {
+    "title": "SSA (Sysacad Score Automation)",
+    "description": "REST API that automates fetching academic grades from the sysacad system at the National Technological University.",
+    "imageSrc": "/SSA.svg",
+    "url": "https://github.com/BasiliscX/sysacad-score-automation"
+  },
+  {
+    "title": "Off Topic Chat",
+    "description": "Real-time chat app for public text messaging.",
+    "imageSrc": "/off-topic.svg",
+    "url": "https://offtopic-alpha.vercel.app/"
+  }
+]

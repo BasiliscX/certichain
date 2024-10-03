@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "A Bit About Me",
+    "desc": "I'm Guillermo Navarro, a passionate developer. Besides coding, I love to read and sometimes write. In my free time, I enjoy exploring new technologies, learning, and improving my skills."
+  },
+  {
+    "id": 2,
+    "title": "My Professional Journey",
+    "desc": "I have experience in web development, desktop applications, and I am now starting in blockchain technology and smart contract creation."
+  }
+]
